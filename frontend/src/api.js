@@ -4,37 +4,6 @@ import axios from "axios";
 const BASE = import.meta.env.VITE_API_URL || "http://localhost:8000/api";
 const client = axios.create({ baseURL: BASE });
 
-client.interceptors.request.use((config) => {
-  const token = localStorage.getItem("auth_token");
-  if (token) config.headers.Authorization = `Bearer ${token}`;
-  return config;
-});
-
-client.interceptors.response.use(
-  (res) => res,
-  (err) => {
-    if (err.response && err.response.status === 401) {
-      localStorage.removeItem("auth_token");
-      window.location.href = "/login";
-    }
-    return Promise.reject(err);
-  }
-);
-
-export async function login(username, password) {
-  const res = await axios.post(`${BASE}/auth/login`, { username, password });
-  localStorage.setItem("auth_token", res.data.token);
-}
-
-export function logout() {
-  localStorage.removeItem("auth_token");
-  window.location.href = "/login";
-}
-
-export function isAuthenticated() {
-  return !!localStorage.getItem("auth_token");
-}
-
 export async function extractDocument(file) {
   const formData = new FormData();
   formData.append("file", file);
