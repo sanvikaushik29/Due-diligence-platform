@@ -1,0 +1,20 @@
+.shell { min-height: 100vh; }
+
+.top-nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 40px; border-bottom: 1px solid var(--rule);
+  background: var(--paper-raised);
+}
+.brand { font-size: 13px; letter-spacing: 0.12em; color: var(--ink); }
+.nav-links { display: flex; gap: 28px; }
+.nav-links a {
+  font-family: var(--font-body); font-size: 14px; font-weight: 500;
+  color: var(--slate); text-decoration: none; padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+}
+.nav-links a.active, .nav-links a:hover { color: var(--ink); border-bottom-color: var(--flagged); }
+.logout-btn {
+  background: none; border: 1px solid var(--rule); border-radius: 6px;
+  padding: 6px 14px; font-size: 13px; color: var(--slate); cursor: pointer; font-family: var(--font-body);
+}
+.logout-btn:hover { border-color: var(--flagged); color: var(--flagged); }

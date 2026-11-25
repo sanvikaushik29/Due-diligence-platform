@@ -1,0 +1,69 @@
+.dashboard { padding: 32px 36px 60px; max-width: 900px; }
+.dash-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
+.dash-label { font-size: 11px; color: var(--flagged); letter-spacing: 0.1em; margin: 0 0 4px; }
+.dash-header h2 { font-size: 26px; color: var(--ink); }
+.dash-actions { display: flex; gap: 10px; }
+.cta.small { padding: 9px 16px; font-size: 13px; }
+.cta.secondary.small { background: transparent; color: var(--ink); border: 1.5px solid var(--ink); }
+.dash-summary { color: var(--slate); font-size: 14px; line-height: 1.6; margin: 16px 0 24px; }
+
+.stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 10px; margin-bottom: 28px; }
+.stat-card {
+  background: var(--paper-raised); border: 1px solid var(--rule); border-radius: 8px;
+  padding: 12px 14px; border-top: 3px solid var(--slate);
+}
+.stat-card.warn { border-top-color: var(--amber); }
+.stat-card.danger { border-top-color: var(--flagged); }
+.stat-card.good { border-top-color: var(--verified); }
+.stat-value { font-size: 22px; font-weight: 500; margin: 0; color: var(--ink); }
+.stat-label { font-size: 11px; color: var(--slate); margin: 2px 0 0; }
+.stat-sub { font-size: 10px; color: var(--flagged); margin: 3px 0 0; }
+
+.dash-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 20px; margin-bottom: 30px; }
+.dash-card { background: var(--paper-raised); border: 1px solid var(--rule); border-radius: 8px; padding: 18px 20px; }
+.dash-card h3 { font-size: 14px; margin-bottom: 12px; color: var(--ink); }
+.muted { color: var(--slate); font-size: 13px; }
+
+.dash-section { margin-top: 30px; }
+.dash-section h3 { font-size: 15px; margin-bottom: 14px; border-bottom: 1px solid var(--rule); padding-bottom: 8px; color: var(--ink); }
+
+.heatmap { display: flex; flex-direction: column; gap: 10px; }
+.heat-row { display: grid; grid-template-columns: 140px 1fr 40px; align-items: center; gap: 12px; }
+.heat-label { display: flex; flex-direction: column; font-size: 12.5px; font-weight: 600; color: var(--ink); }
+.heat-tier { font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 500; }
+.heat-tier.tier-high { color: var(--flagged); }
+.heat-tier.tier-medium { color: var(--amber); }
+.heat-tier.tier-low { color: var(--verified); }
+.heat-bar-track { height: 10px; background: #232B26; border-radius: 5px; overflow: hidden; }
+.heat-bar-fill { height: 100%; border-radius: 5px; }
+.heat-bar-fill.tier-high { background: var(--flagged); }
+.heat-bar-fill.tier-medium { background: var(--amber); }
+.heat-bar-fill.tier-low { background: var(--verified); }
+.heat-pct { font-size: 12px; text-align: right; color: var(--slate); }
+
+.matrix-scroll { overflow-x: auto; }
+.matrix-table { border-collapse: collapse; width: 100%; font-size: 12.5px; }
+.matrix-table th, .matrix-table td { padding: 8px 12px; text-align: center; border-bottom: 1px solid var(--rule); white-space: nowrap; color: var(--ink); }
+.matrix-table th { font-family: var(--font-mono); font-size: 10.5px; color: var(--slate); text-align: left; }
+.matrix-table th:first-child, .matrix-table td.matrix-metric { text-align: left; font-weight: 600; }
+.cell-ok { color: var(--verified); font-weight: 700; }
+.cell-bad { color: var(--flagged); font-weight: 700; }
+.cell-warn { color: var(--amber); font-weight: 700; }
+.cell-na { color: var(--slate); }
+.matrix-legend { font-size: 11.5px; color: var(--slate); margin-top: 10px; }
+.matrix-legend span { margin-right: 4px; }
+
+.claims-list { list-style: none; counter-reset: claim; padding: 0; margin: 0; }
+.claims-list li {
+  counter-increment: claim; display: flex; justify-content: space-between; gap: 12px;
+  padding: 10px 0; border-bottom: 1px solid var(--rule); font-size: 13px; color: var(--ink);
+}
+.claims-list li::before { content: counter(claim) ". "; font-family: var(--font-mono); color: var(--flagged); margin-right: 6px; }
+.claim-text { flex: 1; }
+.claim-page { color: var(--slate); font-size: 11.5px; }
+
+.stamp-row { display: flex; align-items: center; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--rule); }
+.stamp-title { font-size: 13.5px; font-weight: 600; margin: 0; color: var(--ink); }
+.stamp-detail { font-size: 12px; color: var(--slate); margin: 2px 0 0; }
+
+@media (max-width: 950px) { .dash-grid { grid-template-columns: 1fr; } .heat-row { grid-template-columns: 110px 1fr 36px; } }

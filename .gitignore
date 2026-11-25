@@ -1,0 +1,13 @@
+
+backend/venv/
+venv/
+**/__pycache__/
+backend/.env
+backend/app_data.db
+backend/local_vector_store/
+backend/reports_output/
+backend/test_documents/
+frontend/node_modules/
+frontend/dist/
+.vscode/
+backend/app/reports_output/

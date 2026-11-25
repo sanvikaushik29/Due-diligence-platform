@@ -1,0 +1,65 @@
+.analysis-page {
+  display: grid; grid-template-columns: 260px 1fr; gap: 24px;
+  max-width: 1200px; margin: 0 auto; padding: 40px 32px 80px;
+}
+
+.analysis-empty { max-width: 480px; margin: 100px auto; text-align: center; }
+.analysis-empty .eyebrow { color: var(--flagged); font-size: 12px; letter-spacing: 0.1em; margin-bottom: 14px; }
+.analysis-empty h2 { margin-bottom: 10px; color: var(--ink); }
+.analysis-empty p { color: var(--slate); margin-bottom: 24px; }
+
+.sidebar-card { background: var(--paper-raised); border: 1px solid var(--rule); color: var(--ink); border-radius: 10px; padding: 18px 20px; margin-bottom: 16px; }
+.sidebar-card-header { font-size: 13px; font-weight: 600; margin-bottom: 12px; color: var(--slate); }
+.doc-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+.doc-list li { font-size: 13px; display: flex; align-items: center; gap: 8px; }
+.doc-icon { font-size: 13px; }
+.sidebar-status { display: flex; align-items: center; gap: 6px; margin-top: 14px; font-size: 12px; color: var(--verified); }
+.status-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--verified); }
+
+.overview-row { display: flex; justify-content: space-between; font-size: 13px; padding: 6px 0; border-bottom: 1px solid var(--rule); }
+.overview-row:last-child { border-bottom: none; }
+.overview-row .mono.danger { color: var(--flagged); }
+
+.tab-toggle { display: flex; gap: 4px; margin-bottom: 20px; border-bottom: 1px solid var(--rule); }
+.tab-toggle button {
+  background: none; border: none; padding: 10px 18px; font-size: 14px; font-weight: 600;
+  color: var(--slate); cursor: pointer; border-bottom: 2px solid transparent; font-family: var(--font-body);
+}
+.tab-toggle button.active { color: var(--ink); border-bottom-color: var(--flagged); }
+
+.entry-list { display: flex; flex-direction: column; gap: 10px; }
+.entry-card { background: var(--paper-raised); border-radius: 10px; overflow: hidden; border-left: 3px solid var(--rule); }
+.entry-card.status-discrepancy, .entry-card.status-unsupported { border-left-color: var(--flagged); }
+.entry-card.status-unmatched { border-left-color: var(--amber); }
+.entry-card.status-consistent, .entry-card.status-supported { border-left-color: var(--verified); }
+
+.entry-row {
+  width: 100%; background: none; border: none; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 14px 18px; color: var(--ink);
+}
+.entry-main { display: flex; flex-direction: column; gap: 3px; align-items: flex-start; }
+.entry-name { font-size: 14px; font-weight: 600; text-align: left; }
+.claim-name { font-weight: 400; max-width: 480px; }
+.entry-count { font-size: 11px; color: var(--slate); }
+
+.status-pill { font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.05em; padding: 3px 10px; border-radius: 10px; font-family: var(--font-mono); flex-shrink: 0; }
+.status-pill.status-discrepancy, .status-pill.status-unsupported { background: var(--flagged-bg); color: var(--flagged); }
+.status-pill.status-unmatched { background: var(--amber-bg); color: var(--amber); }
+.status-pill.status-consistent, .status-pill.status-supported { background: var(--verified-bg); color: var(--verified); }
+
+.entry-detail { padding: 4px 18px 16px; border-top: 1px solid var(--rule); }
+.instance-row { padding: 10px 0; border-bottom: 1px solid var(--rule); }
+.instance-row:last-of-type { border-bottom: none; }
+.instance-top { display: flex; justify-content: space-between; font-size: 12px; color: var(--slate); margin-bottom: 6px; }
+.instance-value { color: var(--ink); font-weight: 500; }
+.instance-sentence { font-size: 13px; color: var(--ink); opacity: 0.85; font-style: italic; margin: 0 0 6px; line-height: 1.5; }
+.instance-period { font-size: 11px; color: var(--slate); }
+
+.entry-note { font-size: 12.5px; margin: 10px 0 0; }
+.note-danger { color: var(--flagged); }
+
+.entry-flags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
+.flag-chip { font-size: 10.5px; background: rgba(255,255,255,0.06); border: 1px solid var(--rule); border-radius: 10px; padding: 3px 9px; color: var(--slate); }
+
+@media (max-width: 900px) { .analysis-page { grid-template-columns: 1fr; } }
